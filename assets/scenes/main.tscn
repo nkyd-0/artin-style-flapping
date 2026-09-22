@@ -1,0 +1,10 @@
+[gd_scene format=3 uid="uid://cxlibp1tcnr3r"]
+
+[ext_resource type="Script" uid="uid://cljst2qw60ppc" path="res://assets/scenes/main_logic.gd" id="1_dfgan"]
+[ext_resource type="PackedScene" uid="uid://jgbqv7limkun" path="res://assets/scenes/objects/artin.tscn" id="2_dfgan"]
+
+[node name="Node2D" type="Node2D" unique_id=1573533415]
+script = ExtResource("1_dfgan")
+
+[node name="character" parent="." unique_id=884250274 instance=ExtResource("2_dfgan")]
+position = Vector2(17, -14)

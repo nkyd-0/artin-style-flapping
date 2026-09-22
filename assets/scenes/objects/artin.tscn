@@ -1,0 +1,23 @@
+[gd_scene format=3 uid="uid://jgbqv7limkun"]
+
+[ext_resource type="Script" uid="uid://cgtkv4i3n3lx" path="res://assets/scripts/bird_movement.gd" id="1_jlxlk"]
+[ext_resource type="Texture2D" uid="uid://bi60ojgc72ww0" path="res://assets/sprites/characters/artin_style.png" id="2_m8wh1"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_corwe"]
+size = Vector2(168, 168)
+
+[node name="Node2D" type="Node2D" unique_id=884250274]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="." unique_id=422222523]
+script = ExtResource("1_jlxlk")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D" unique_id=1714314289]
+texture = ExtResource("2_m8wh1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D" unique_id=1443033623]
+shape = SubResource("RectangleShape2D_corwe")
+
+[node name="Camera2D" type="Camera2D" parent="CharacterBody2D" unique_id=1179953613]
+zoom = Vector2(0.35, 0.35)
+limit_top = -926
+limit_bottom = 926
