@@ -7,6 +7,6 @@
 script = ExtResource("1_dfgan")
 
 [node name="character" parent="." unique_id=884250274 instance=ExtResource("2_dfgan")]
-position = Vector2(17, -14)
+position = Vector2(-1, -2)
 
 [node name="blocks" type="Node" parent="." unique_id=407605552]

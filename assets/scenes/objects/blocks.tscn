@@ -5,14 +5,14 @@
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_8vww6"]
 load_path = "res://.godot/imported/tube.jpeg-53000aff202d12bbbc890f04378bd1a2.ctex"
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_corwe"]
-size = Vector2(310, 1918)
-
 [sub_resource type="CompressedTexture2D" id="CompressedTexture2D_ytyxe"]
 load_path = "res://.godot/imported/tube.jpeg-53000aff202d12bbbc890f04378bd1a2.ctex"
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_unwc6"]
 size = Vector2(310.5, 1918.5)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_corwe"]
+size = Vector2(310, 1918)
 
 [node name="Node2D" type="Node2D" unique_id=283733020]
 
@@ -24,17 +24,31 @@ position = Vector2(12, -1243)
 scale = Vector2(0.2888889, 1)
 texture = SubResource("CompressedTexture2D_8vww6")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=334580054]
-z_index = 1
-position = Vector2(15, 1256)
-shape = SubResource("RectangleShape2D_corwe")
-
 [node name="Sprite2D" type="Sprite2D" parent="StaticBody2D" unique_id=1294208961]
 position = Vector2(15, 1257)
 scale = Vector2(0.2888889, 1)
 texture = SubResource("CompressedTexture2D_ytyxe")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=508100800]
+[node name="Area2D" type="Area2D" parent="StaticBody2D" unique_id=399001058]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=508100800]
 z_index = 1
 position = Vector2(10.75, -1244.25)
 shape = SubResource("RectangleShape2D_unwc6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D/Area2D" unique_id=334580054]
+z_index = 1
+position = Vector2(15, 1256)
+shape = SubResource("RectangleShape2D_corwe")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="StaticBody2D" unique_id=2135768808]
+z_index = 1
+position = Vector2(10.75, -1244.25)
+shape = SubResource("RectangleShape2D_unwc6")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="StaticBody2D" unique_id=1866622672]
+z_index = 1
+position = Vector2(15, 1256)
+shape = SubResource("RectangleShape2D_corwe")
+
+[connection signal="area_entered" from="StaticBody2D/Area2D" to="StaticBody2D" method="_on_area_2d_area_entered"]
